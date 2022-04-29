@@ -1,0 +1,41 @@
+[ {
+  "uid" : "980e60c6f1cbc060",
+  "name" : "test_01_get_token[guoguo]",
+  "time" : {
+    "start" : 1650270408435,
+    "stop" : 1650270410442,
+    "duration" : 2007
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "82bc63cf968dc72c",
+  "name" : "test_01_get_token[hehe]",
+  "time" : {
+    "start" : 1650270410446,
+    "stop" : 1650270412449,
+    "duration" : 2003
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6e1a4834b3d7468e",
+  "name" : "test_02_add_flag",
+  "time" : {
+    "start" : 1650270414466,
+    "stop" : 1650270416470,
+    "duration" : 2004
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d8e548d371e3d178",
+  "name" : "test_01_get_token[haha]",
+  "time" : {
+    "start" : 1650270412451,
+    "stop" : 1650270414461,
+    "duration" : 2010
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,81 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "接口测试自动化项目",
+    "children" : [ {
+      "name" : "用户登录接口",
+      "children" : [ {
+        "name" : "test_01_get_token[guoguo]",
+        "uid" : "980e60c6f1cbc060",
+        "parentUid" : "fee3ab3a55a811818098d6f796881a1d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650270408435,
+          "stop" : 1650270410442,
+          "duration" : 2007
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'guoguo'" ]
+      }, {
+        "name" : "test_01_get_token[hehe]",
+        "uid" : "82bc63cf968dc72c",
+        "parentUid" : "fee3ab3a55a811818098d6f796881a1d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650270410446,
+          "stop" : 1650270412449,
+          "duration" : 2003
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'hehe'" ]
+      }, {
+        "name" : "test_01_get_token[haha]",
+        "uid" : "d8e548d371e3d178",
+        "parentUid" : "fee3ab3a55a811818098d6f796881a1d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650270412451,
+          "stop" : 1650270414461,
+          "duration" : 2010
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'haha'" ]
+      }, {
+        "name" : "test_02_add_flag",
+        "uid" : "6e1a4834b3d7468e",
+        "parentUid" : "fee3ab3a55a811818098d6f796881a1d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650270414466,
+          "stop" : 1650270416470,
+          "duration" : 2004
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fee3ab3a55a811818098d6f796881a1d"
+    } ],
+    "uid" : "633c8d4a7280c25ca8f88f2c61810ae2"
+  } ]
+}

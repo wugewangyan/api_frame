@@ -1,0 +1,99 @@
+{
+  "uid" : "82bc63cf968dc72c",
+  "name" : "test_01_get_token[hehe]",
+  "fullName" : "testcase.weixin.test_weixin.TestApi#test_01_get_token",
+  "historyId" : "bc361d915ba92a5544c76ca5051cf3e0",
+  "time" : {
+    "start" : 1650270410446,
+    "stop" : 1650270412449,
+    "duration" : 2003
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1650270408434,
+      "stop" : 1650270408434,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_verify_url",
+    "time" : {
+      "start" : 1650270408435,
+      "stop" : 1650270408435,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "用户登录接口"
+  }, {
+    "name" : "epic",
+    "value" : "接口测试自动化项目"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcase.weixin"
+  }, {
+    "name" : "suite",
+    "value" : "test_weixin"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestApi"
+  }, {
+    "name" : "host",
+    "value" : "795CYJH39WYJUU5"
+  }, {
+    "name" : "thread",
+    "value" : "25520-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.weixin.test_weixin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "args_name",
+    "value" : "'hehe'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "82bc63cf968dc72c.json",
+  "parameterValues" : [ "'hehe'" ]
+}

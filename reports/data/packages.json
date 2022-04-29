@@ -1,0 +1,77 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "testcase.weixin.test_weixin",
+    "children" : [ {
+      "name" : "test_01_get_token[guoguo]",
+      "uid" : "980e60c6f1cbc060",
+      "parentUid" : "5b004ca07ba0ebc372697c1888489e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650270408435,
+        "stop" : 1650270410442,
+        "duration" : 2007
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "'guoguo'" ]
+    }, {
+      "name" : "test_01_get_token[hehe]",
+      "uid" : "82bc63cf968dc72c",
+      "parentUid" : "5b004ca07ba0ebc372697c1888489e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650270410446,
+        "stop" : 1650270412449,
+        "duration" : 2003
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "'hehe'" ]
+    }, {
+      "name" : "test_01_get_token[haha]",
+      "uid" : "d8e548d371e3d178",
+      "parentUid" : "5b004ca07ba0ebc372697c1888489e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650270412451,
+        "stop" : 1650270414461,
+        "duration" : 2010
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "'haha'" ]
+    }, {
+      "name" : "test_02_add_flag",
+      "uid" : "6e1a4834b3d7468e",
+      "parentUid" : "5b004ca07ba0ebc372697c1888489e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650270414466,
+        "stop" : 1650270416470,
+        "duration" : 2004
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "testcase.weixin.test_weixin"
+  } ]
+}

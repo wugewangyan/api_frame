@@ -1,0 +1,85 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "testcase.weixin",
+    "children" : [ {
+      "name" : "test_weixin",
+      "children" : [ {
+        "name" : "TestApi",
+        "children" : [ {
+          "name" : "test_01_get_token[guoguo]",
+          "uid" : "980e60c6f1cbc060",
+          "parentUid" : "5df5b197182b86de78521096950e54fe",
+          "status" : "passed",
+          "time" : {
+            "start" : 1650270408435,
+            "stop" : 1650270410442,
+            "duration" : 2007
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "'guoguo'" ]
+        }, {
+          "name" : "test_01_get_token[hehe]",
+          "uid" : "82bc63cf968dc72c",
+          "parentUid" : "5df5b197182b86de78521096950e54fe",
+          "status" : "passed",
+          "time" : {
+            "start" : 1650270410446,
+            "stop" : 1650270412449,
+            "duration" : 2003
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "'hehe'" ]
+        }, {
+          "name" : "test_01_get_token[haha]",
+          "uid" : "d8e548d371e3d178",
+          "parentUid" : "5df5b197182b86de78521096950e54fe",
+          "status" : "passed",
+          "time" : {
+            "start" : 1650270412451,
+            "stop" : 1650270414461,
+            "duration" : 2010
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "'haha'" ]
+        }, {
+          "name" : "test_02_add_flag",
+          "uid" : "6e1a4834b3d7468e",
+          "parentUid" : "5df5b197182b86de78521096950e54fe",
+          "status" : "passed",
+          "time" : {
+            "start" : 1650270414466,
+            "stop" : 1650270416470,
+            "duration" : 2004
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "5df5b197182b86de78521096950e54fe"
+      } ],
+      "uid" : "83f1eb2110a3f0c5156271ca03cc72c4"
+    } ],
+    "uid" : "ce03e22c21c4bae690d2820151244977"
+  } ]
+}

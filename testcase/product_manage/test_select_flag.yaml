@@ -1,0 +1,8 @@
+-
+  name: 查询标签
+  request:
+    method: get
+    url: /cgi-bin/tags/get?access_token=
+    headers: none
+    datas: none
+  validate: none

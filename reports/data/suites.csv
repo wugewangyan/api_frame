@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Apr 18 16:26:48 CST 2022","Mon Apr 18 16:26:50 CST 2022","2007","testcase.weixin","test_weixin","TestApi","","","test_01_get_token[guoguo]",""
+"passed","Mon Apr 18 16:26:50 CST 2022","Mon Apr 18 16:26:52 CST 2022","2003","testcase.weixin","test_weixin","TestApi","","","test_01_get_token[hehe]",""
+"passed","Mon Apr 18 16:26:54 CST 2022","Mon Apr 18 16:26:56 CST 2022","2004","testcase.weixin","test_weixin","TestApi","","","test_02_add_flag",""
+"passed","Mon Apr 18 16:26:52 CST 2022","Mon Apr 18 16:26:54 CST 2022","2010","testcase.weixin","test_weixin","TestApi","","","test_01_get_token[haha]",""
