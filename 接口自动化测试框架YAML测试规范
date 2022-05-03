@@ -1,0 +1,21 @@
+接口自动化测试框架yaml测试用例规范：
+1，一级关键字必须包含：name，request，validate
+2，在request下必须包含：method，url
+             可能包含：headers， data(POST)， json， params(GET)
+3,传参方式：
+        1，get请求必须，那么必须通过params传参
+        2，post请求
+            传 json 格式，需要使用 json 传参
+            传表单格式，需要使用 data 传参
+        3，文件上传：使用 files 传参
+4,接口关联（提取多个值）
+    多种提取方式（提取多个值）：
+    正则表达式和jsonpath表达式提取
+    extract：
+        access_token:'"access_token":"(.*?)"'  #正则
+        expires_in: $.expires_in               #jsonpath提取
+        extract:
+    取值:
+
+
+

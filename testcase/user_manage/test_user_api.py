@@ -1,5 +1,5 @@
 import requests
-from commons.requests_util import Requestsutil
+from commons.requests_util import RequestsUtil
 from commons.yaml_util import read_extract_yaml,write_extract_yaml
 import re
 class TestUserApi:
