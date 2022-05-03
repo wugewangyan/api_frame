@@ -3,3 +3,5 @@
 temps
 *.iml
 .idea/**
+.idea/api_frame.iml
+.idea/misc.xml
