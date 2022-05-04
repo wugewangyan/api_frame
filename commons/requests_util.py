@@ -3,6 +3,8 @@ import re
 
 import jsonpath
 import requests
+
+from commons.str_util import replace_extract_param
 from commons.yaml_util import read_config_yaml, write_extract_yaml, read_extract_yaml
 
 
@@ -35,22 +37,19 @@ class RequestsUtil():
     考虑问题2：（string，int，float，list，dict）
     '''
     def replace_params(self, data):
-        # 保存数据类型
         if data:
+            # 1. 保存数据类型
             data_type = type(data)
-            # 判断数据类型
+            # 2. 判断数据类型, 转化成字符串
             if isinstance(data,dict) or isinstance(data,list):
                 str_data = json.dumps(data)
             else:
                 str_data = str(data)
-            for cs in range(1,str_data.count('${')+1):
-                if "${" in str_data and "}" in str_data:
-                    start_index = str_data.index("${")
-                    end_index = str_data.index("}", start_index)
-                    old_value = str_data[start_index:end_index + 1]
-                    new_value = read_extract_yaml(old_value[2:-1])
-                    str_data = str_data.replace(old_value, new_value)
-            # 还原数据类型
+
+            # 3. 替换参数
+            str_data = replace_extract_param(str_data, "${", "}")
+
+            # 4. 根据数据类型还原数据
             if isinstance(data,dict) or isinstance(data,list):
                 data = json.loads(str_data)
             else:

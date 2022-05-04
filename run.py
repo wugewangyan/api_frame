@@ -1,6 +1,8 @@
 import  pytest
 import  time
 import os
+
+from commons.str_util import replace_extract_param
 from commons.yaml_util import read_extract_yaml
 
 
@@ -23,3 +25,8 @@ if __name__ == '__main__':
     #     str = str.replace(old_value,new_value)
     #     print(old_value,new_value)
     #     print(str)
+
+    # value = "这里是我的测试$ddt{{access_token}}, 我还要再次测试一下$ddt{{abc}}"
+    # rep_str = replace_extract_param(value, "$ddt{{", "}}")
+    # print(rep_str)
+
