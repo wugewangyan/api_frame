@@ -16,6 +16,7 @@ def invoke(method, args, clazz='HotLoadUtil', package='commons.hot_load_util'):
     else:
         print('没有找到' + package + '包下的' + clazz + '类')
 
+
 def invoke_hot_load(full_clazz):
     try:
         package = 'commons.hot_load_util'
@@ -28,8 +29,8 @@ def invoke_hot_load(full_clazz):
             clazz = clazz_info[1]
             method_args = clazz_info[2]
             method = get_method(method_args)
-            args = get_params(method_args,None)
-        elif len(clazz_info) ==2:
+            args = get_params(method_args, None)
+        elif len(clazz_info) == 2:
             clazz = clazz_info[0]
             method_args = clazz_info[1]
             method = get_method(method_args)
@@ -40,27 +41,23 @@ def invoke_hot_load(full_clazz):
             args = get_params(method_args, None)
         else:
             print('热加载字符串有误，请检查')
-        return invoke(method = method,args=args,clazz=clazz,package=package)
+        return invoke(method=method, args=args, clazz=clazz, package=package)
     except Exception as e:
         msg = "热加载处理出现异常"
         raise Exception(msg)
-
 
 
 def get_method(method_args):
     return method_args[:method_args.index('(')]
 
 
-def get_params(method_args,default_value):
+def get_params(method_args, default_value):
     res = []
     if default_value:
         res.append(default_value)
-    args_str = method_args[method_args.index("(") +1 : method_args.index(")")]
+    args_str = method_args[method_args.index("(") + 1: method_args.index(")")]
     if str(args_str).strip():
         args_list = str(args_str).split(',')
         for arg in args_list:
             res.append(arg.strip())
     return res
-
-
-

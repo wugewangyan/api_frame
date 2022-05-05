@@ -15,7 +15,18 @@
         access_token:'"access_token":"(.*?)"'  #正则
         expires_in: $.expires_in               #jsonpath提取
         extract:
-    取值:
+    取值方式：
+    ${read_extract_data(access_token)}
+5,热加载
+    1，hot_load_util.py文件中定义方法，注意返回值需要字符串就返回字符串，需要整型就返回整型
+    #获得随机数
+    def get_random_number(self,min,max)
+        rm = random.rendint(int(min),int(max))
+        return str(rm)
+    2,在测试用例当中传入类的对象
+    3，在yaml测试用例当中调用函数
+
+
 
 
 

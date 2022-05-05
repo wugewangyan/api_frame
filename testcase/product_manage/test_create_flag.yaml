@@ -2,7 +2,7 @@
   name: 创建标签
   request:
     method: post
-    url: /cgi-bin/tags/create?access_token=
+    url: /cgi-bin/tags/create?access_token=${access_token}
     headers: none
-    datas: {"tag": {"name": "拿破仑" }}
+    data: {"tag": {"name": "拿破仑" }}
   validate: none

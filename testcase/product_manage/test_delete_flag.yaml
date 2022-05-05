@@ -1,2 +1,8 @@
 -
   name: 删除标签
+  request:
+    method: post
+    url: /cgi-bin/tags/delete?access_token=${access_token}
+    headers: none
+    data: none
+    validate: none
