@@ -1,5 +1,7 @@
 -
   name: 获取token鉴权码
+  parameterize:
+    name-appid-secret-grant_type-assert_str: /datas/product_manage/get_token_data.yaml
   request :
     method: get
     url: /cgi-bin/token
@@ -9,6 +11,8 @@
       secret: e40a02f9d79a8097df497e6aaf93ab80
   extract:
     access_token : $.access_token
-  validate: none
+  validate:
+    - equals: {status_code: 200}
+    - contains: access_token
 
 

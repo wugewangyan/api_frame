@@ -2,8 +2,9 @@ import  pytest
 import  time
 import os
 
-from commons.str_util import replace_extract_param
-from commons.yaml_util import read_extract_yaml
+
+# from commons.str_util import replace_extract_param
+# from commons.yaml_util import read_extract_yaml
 
 
 if __name__ == '__main__':

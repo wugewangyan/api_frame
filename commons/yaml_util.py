@@ -10,6 +10,8 @@ def read_extract_yaml(key):
        extract_values = yaml.load(stream=f,Loader=yaml.FullLoader)
        return extract_values[key]
 
+
+
 #写入extract.yaml文件
 def write_extract_yaml(data):
     with open(get_object_path()+'/extract.yaml',encoding='utf-8',mode='a') as f:

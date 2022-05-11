@@ -3,6 +3,5 @@
   request:
     method: post
     url: /cgi-bin/tags/create?access_token=${access_token}
-    headers: none
     data: {"tag": {"name": "拿破仑" }}
   validate: none

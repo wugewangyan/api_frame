@@ -5,7 +5,7 @@ import json
 from commons.yaml_util import read_extract_yaml
 from commons.requests_util import RequestsUtil
 import pytest
-class TestApi():
+class TestWatchdogApi():
     access_token=''
     # session = requests.Session()
 
@@ -32,6 +32,7 @@ class TestApi():
         res = RequestsUtil().send_request(method='post', url=url, json=data)
         # res = requests.post(url=url,json=data)
         print(res.json())
+
 
 
 

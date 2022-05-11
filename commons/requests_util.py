@@ -22,7 +22,7 @@ class RequestsUtil():
         if 'name' in case_info_keys and 'request' in case_info_keys and 'validate' in case_info_keys:
             request_keys = case_info['request'].keys()
             if 'method' in request_keys and 'url' in request_keys:
-                print('YAML验证成功')
+                # print('YAML验证成功')
                 return True
             else:
                 print('在request下必须包含：method，url')
@@ -104,6 +104,15 @@ class RequestsUtil():
         # 4. 处理响应
         self.extract_response(case_info, res)
 
+
+
+        #包含断言
+        def contains_assert(self,value,sj_value):
+            flag = 0
+            if str(value) not in str(sj_value):
+                flag = flag+1
+                print('断言失败：返回的结果中不包含' + str(value))
+            return flag
 
     # # 统一封装请求
     # def send_request(self,method,url,**kwargs):

@@ -4,6 +4,7 @@ from commons.yaml_util import read_extract_yaml
 # start_str : $After{{
 # end_str : }}
 def replace_extract_param(str_value, start_str, end_str):
+    global new_value
     replace_str = str_value
     while True:
         if start_str in replace_str and end_str in replace_str:
@@ -15,6 +16,12 @@ def replace_extract_param(str_value, start_str, end_str):
             else:
                 new_value = read_extract_yaml(old_value[len(start_str):-len(end_str)])
                 replace_str = replace_str.replace(old_value, new_value)
+
+            # 整型等类型的数据按照整型替换
+            if isinstance(new_value, int) or isinstance(new_value, float):
+                replace_str = replace_str.replace('"' + old_value + '"', str(new_value))
+            else:
+                replace_str = replace_str.replace(old_value, str(new_value))
         else:
             break
     return replace_str
