@@ -1,0 +1,19 @@
+-
+  name: 新增定时器配置
+  request:
+    method: post
+    url: api/open/watchdog/v1/config
+    params:
+      name: kanmengou
+      startDate: 2022-05-11
+      endDate: 2022-05-12
+      rateType: 1
+      warnInterval: 1
+      warnUrl : https://www.baidu.com
+      bizStatus: 1
+      restTime:
+  extract:
+    traceId: $.traceId
+  validate:
+    - equals: { status_code: 200 }
+    - contains: traceId
