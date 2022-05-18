@@ -1,14 +1,23 @@
+import dbm
+
 import  requests
+
 import json
 
 import datetime
 import  time
-
+from  commons import  db
+from watchdog import dbData
 
 
 host = 'http://124.65.131.14:9082/'
+# host ='http://124.65.131.14:9080/'
 session = requests.session()
 auth=''
+
+def sql1():
+    data = dbData.db_datba("select * from timer_config_table where id =131")
+    print(data)
 
 def login(username,password):
     url = host + 'open/account/api/base/auth/login'
@@ -17,14 +26,12 @@ def login(username,password):
         "password": password,
     }
     re = session.request(method = 'POST',url = url,json= data)
-    # print(re.json())
     # print(re.headers)
     global auth
     auth = re.headers['Authorization']
     # print(auth)
 
-def add_wathchdog(name, startDate,endDate,warnInterval,warnVal,rateUnit,rateVal,restTime):
-
+def add_wathchdog(name, startDate,endDate,warnInterval,warnVal,rateInterval,rateUnit,rateVal,restTime):
     url = host + 'api/open/watchdog/v1/config'
     headers = {
         "Authorization": auth
@@ -40,24 +47,24 @@ def add_wathchdog(name, startDate,endDate,warnInterval,warnVal,rateUnit,rateVal,
     8，rateUnit：重复单位小时1，天2，周3，月4，年5
     9，rateVal：频率值，小时，分钟（00，02，59），天小时（00-23），周一（00时，02时），月天（1-31），年月（1-12）
     10，warnVal：逾期告警值单位s
+    add_wathchdog('1111', '2022-05-16T16:00:00.000Z', '2022-05-19T16:00:00.000Z',2,'',1,'01,03',['2022-05-20'])
     '''
     data = {
-        "id":79,
         "name":name,
-        "rateInterval": 1,
+        "rateInterval": rateInterval,
         "warnInterval": warnInterval,
         "warnUrl":"http://oa.rhtect.com:808/seeyon/main.do?method=main",
         "warnVal": warnVal,
         "rateUnit": rateUnit,
         "startDate": startDate,
         "endDate": endDate,
-        "rateType":2,
+        "rateType": 2,
         "rateVal": rateVal,
         "bizStatus": 1,
         "restTime": restTime
     }
     re = session.request(method='POST', url=url,json = data,headers=headers)
-    print(re.json())
+    print(re.text)
 
 
 def wa():
@@ -66,22 +73,32 @@ def wa():
         "Authorization": auth
     }
     re = session.request(method='GET', url=url ,headers=headers)
-    # print(re.json())
-    print(re.json()['body'])
-    global uuid,id
-    uuid =(re.json()['body']['records'][0]['uuid'])
+    print(re.json())
+    # print(re.json()['body'])
+    global uuid,id,name
+    uuid =(re.json()['body']['records'][5]['uuid'])
     id = (re.json()['body']['records'][0]['id'])
+    name =(re.json()['body']['records'][5]['name'])
+    # print(name)
     # print(id)
 
 
 def clear():
     url = host +'api/open/watchdog/v1/callback/'+uuid
-    print(uuid)
+
+    # print(uuid)
     headers = {
         "Authorization": auth
     }
     re = session.request(method='GET', url=url ,headers=headers)
-    print(re.text)
+    print(re.json())
+    #函数重复调用两次
+    if name == '1'or name == '2':
+        # 函数重复调用两次
+        for _ in range(2):
+            print('执行2次----------'+re.text)
+    else :
+        print('执行一次----------'+ re.text)
 
 
 
@@ -94,6 +111,7 @@ def edit_time(startDate,endDate):
     re = session.request(method='PUT', url=url ,headers=headers)
     print(re.text)
 
+
 # def times():
 #     utc_data1 = '2022-05-16'
 #     utc_date2 = datetime.datetime.strptime(utc_data1, "%Y-%m-%d")
@@ -102,10 +120,11 @@ def edit_time(startDate,endDate):
 
 if __name__ == '__main__':
     login('zengjuan', 123456)
-    add_wathchdog('1111', '2022-05-16T16:00:00.000Z', '2022-05-19T16:00:00.000Z',0,0,2,'01,03',['2022-05-20'])
-
-    # # add_wathchdog('nannana','2022-05-19T16:00:00.000Z','2022-05-19T16:00:00.000Z')
+    # add_wathchdog('1111','2022-05-16T16:00:00.000Z','2022-05-16T16:00:00.000Z',5,'',1,1,'01,02',[])
+    # #
+    # # # # add_wathcdog('nannana','2022-05-19T16:00:00.000Z','2022-05-19T16:00:00.000Z')
     wa()
     clear()
     # edit_time('2022-05-16','2022-05-19')
     # times()
+    sql1()
