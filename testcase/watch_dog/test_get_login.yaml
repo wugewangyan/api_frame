@@ -1,0 +1,14 @@
+-
+  name: 登录页面
+  request:
+    method: post
+    url: /open/account/api/base/auth/login
+    json:
+      "usename": "zengjuan"
+      "password": "PHYDx/qSZn/WIBvhyCzcjdpMGK1oIDAROagJfE37wCwFOoNJD+iTruWBs3IRNPXmVk7xjOOvTbSw5ou6PCWBeYc3R3kh5sZtBzCcJpnjewWcjUvjRqIyD7uVKlJUvnhnZWt2B0D16vVOf138WPVYDUwauzOtJJdUA3WV9U3eslw="
+
+  extract:
+      Authorization: $.Authorization
+  validate:
+      - equals: { status_code: 200 }
+      - contains: Authorization

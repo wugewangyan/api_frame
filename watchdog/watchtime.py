@@ -1,4 +1,7 @@
 import dbm
+import allure
+import pytest
+
 
 import  requests
 
@@ -26,7 +29,9 @@ def login(username,password):
         "password": password,
     }
     re = session.request(method = 'POST',url = url,json= data)
-    # print(re.headers)
+    print(re.json())
+    # assert re.status_code ==200
+    print(re.headers)
     global auth
     auth = re.headers['Authorization']
     # print(auth)
@@ -76,11 +81,13 @@ def wa():
     print(re.json())
     # print(re.json()['body'])
     global uuid,id,name
-    uuid =(re.json()['body']['records'][5]['uuid'])
-    id = (re.json()['body']['records'][0]['id'])
-    name =(re.json()['body']['records'][5]['name'])
-    # print(name)
-    # print(id)
+    uuid =(re.json()['body']['records'][1]['uuid'])
+    id = (re.json()['body']['records'][1]['id'])
+    records = (re.json()['body']['records'][1])
+    name =(re.json()['body']['records'][1]['name'])
+    print(name)
+    print(id)
+    print(records)
 
 
 def clear():
@@ -90,15 +97,15 @@ def clear():
     headers = {
         "Authorization": auth
     }
-    re = session.request(method='GET', url=url ,headers=headers)
-    print(re.json())
     #函数重复调用两次
-    if name == '1'or name == '2':
+    if name == '1' or name == '2':
         # 函数重复调用两次
         for _ in range(2):
+            re = session.request(method='GET', url=url, headers=headers)
             print('执行2次----------'+re.text)
-    else :
-        print('执行一次----------'+ re.text)
+    else:
+        re = session.request(method='GET', url=url, headers=headers)
+        print('执行一次--------------'+re.text)
 
 
 
@@ -119,12 +126,14 @@ def edit_time(startDate,endDate):
 #     print(local_date)
 
 if __name__ == '__main__':
-    login('zengjuan', 123456)
-    # add_wathchdog('1111','2022-05-16T16:00:00.000Z','2022-05-16T16:00:00.000Z',5,'',1,1,'01,02',[])
-    # #
-    # # # # add_wathcdog('nannana','2022-05-19T16:00:00.000Z','2022-05-19T16:00:00.000Z')
-    wa()
-    clear()
-    # edit_time('2022-05-16','2022-05-19')
-    # times()
-    sql1()
+  login('zengjuan', 123456)
+
+  # # add_wathchdog('1111','2022-05-16T16:00:00.000Z','2022-05-16T16:00:00.000Z',5,'',1,1,'01,02',[])
+    # # #
+    # # # # # add_wathcdog('nannana','2022-05-19T16:00:00.000Z','2022-05-19T16:00:00.000Z')
+    # wa()
+    #
+    # clear()
+    # # edit_time('2022-05-17','2022-05-19')
+    # # times()
+    # sql1()
