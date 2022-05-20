@@ -9,7 +9,6 @@ from commons.yaml_util import read_config_yaml, write_extract_yaml, read_extract
 
 
 class RequestsUtil():
-
     # 通过session会话去关联，session默认的情况下会自动关联cookie
     session = requests.session()
 
@@ -77,6 +76,9 @@ class RequestsUtil():
                         print('返回的结果不是json格式，不能使用json_path提取')
 
 
+    # def extract_headers(self,caseinfo,headers):
+
+
     # 处理请求
     def send_request(self, case_info):
         # 1. 验证yaml用例是否合法
@@ -99,10 +101,13 @@ class RequestsUtil():
                     value[file_key] = open(file_path,'rb')
         # 3. 发送请求
         res = RequestsUtil.session.request(method, url, **case_info['request'])
+        auth = res.headers['Authorization']
+        print(auth)
         print(res.text)
 
         # 4. 处理响应
-        self.extract_response(case_info, res)
+        rr=self.extract_response(case_info, res)
+        print(rr)
 
 
 
