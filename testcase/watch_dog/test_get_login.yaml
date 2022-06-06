@@ -6,8 +6,8 @@
     json:
         username: zengjuan
         password: 123456
-#  extract:
-#      Authorization: $.Authorization
+  extract:
+      Authorization: $.headers['Authorization']
   validate:
       - equals: { status_code: 200 }
-#      - contains: Authorization
+

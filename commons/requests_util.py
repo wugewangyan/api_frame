@@ -5,7 +5,7 @@ import jsonpath
 import requests
 
 from commons.str_util import replace_extract_param
-from commons.yaml_util import read_config_yaml, write_extract_yaml, read_extract_yaml
+from commons.yaml_util import read_config_yaml, write_extract_yaml,write_token_yaml
 
 
 class RequestsUtil():
@@ -14,6 +14,7 @@ class RequestsUtil():
 
     def __init__(self, two_node):
         self.base_url = read_config_yaml('base', two_node)
+
 
     # 规范yaml用例 如果yaml配置合法， 返回True， 如果不合法， 我们返回False
     def standard_yaml(self, case_info):
@@ -99,11 +100,20 @@ class RequestsUtil():
             elif key == 'files':
                 for file_key,file_path in value.items():
                     value[file_key] = open(file_path,'rb')
+
         # 3. 发送请求
         res = RequestsUtil.session.request(method, url, **case_info['request'])
+        # global auth
         auth = res.headers['Authorization']
-        print(auth)
+        return auth
+        # print(auth)
+        write_token_yaml(auth)
         print(res.text)
+
+
+
+
+
 
         # 4. 处理响应
         rr=self.extract_response(case_info, res)
@@ -128,3 +138,5 @@ class RequestsUtil():
     #     #请求
     #     res= Requestsutil.session.request(method,url,**kwargs)
     #     return res
+
+

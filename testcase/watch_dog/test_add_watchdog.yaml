@@ -5,8 +5,8 @@
 #    url: api/open/watchdog/v1/config
 #    params:
 #      name: kanmengou
-#      startDate: 2022-05-13T16:00:00.000Z
-#      endDate: 2022-05-18T16:00:00.000Z
+#      startDate: 2022-05-13
+#      endDate: 2022-05-18
 #      rateType: 1
 #      warnInterval: 1
 #      warnUrl : https://www.baidu.com

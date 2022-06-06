@@ -1,0 +1,11 @@
+-
+  name: 删除定时器配置
+  request:
+    method: DELETE
+    url: /api/open/watchdog/v1/config
+    params:
+      id： 391
+    extract:
+      auth: $.access_token
+  validate:
+    - equals: { status_code: 200 }

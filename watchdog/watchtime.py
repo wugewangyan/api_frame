@@ -88,6 +88,18 @@ def wa():
     print(name)
     print(id)
     print(records)
+def edit_watchdog():
+    url = host + 'api/open/watchdog/v1/config'
+    headers = {
+        "Authorization": auth
+    }
+    data={"id":395,"name":"ggg","uuid":"f817826ac4f24b1ea9a8d6daf7d81e23",
+          "effectDate":["2022-05-24T16:00:00.000Z","2022-07-30T16:00:00.000Z"],
+          "rateInterval":2,"rateUnit":"2","warnInterval":22,"warnUrl":"https://www.baidu.com",
+          "warnVal":'',"expire":0,"startDate":"2022-05-26T16:00:00.000Z",
+          "endDate":"2022-07-30T16:00:00.000Z","rateType":"2","rateVal":"00,05","bizStatus":0,"restTime":["2022-07-03"]}
+    re = session.request(method='PUT', url=url, json=data,headers=headers)
+    print(re.text)
 
 
 def clear():
@@ -137,3 +149,4 @@ if __name__ == '__main__':
     # # edit_time('2022-05-17','2022-05-19')
     # # times()
     # sql1()
+  edit_watchdog()
