@@ -27,12 +27,14 @@ class TestWatchdogApi():
 
         data={
             'username': 'zengjuan',
-            'password':'KJq7V+35XAMT1PlFgoN4wnlTfii6oFDIb/78Ecx3DQJvIjwjbtrlQwLLuMKnwgcYbTej8hirTiv4UrwZZl2fQgArjHspmj6u1GRMn8iQkSBRqG76UXc4ghyqK2SckMoW6PQ6w0bghSv/4bk5Ysg8H+BIfl/ULfk2/0ZC0g0MFGw='
+            'password':'123456'
         }
-        res = RequestsUtil().send_request(method='post', url=url, json=data)
+        res = RequestsUtil(two_node='base_url').send_request(method='post', url=url, json=data)
         # res = requests.post(url=url,json=data)
         print(res.json())
 
 
 
 
+if __name__ == '__main__':
+    TestWatchdogApi.test_login()

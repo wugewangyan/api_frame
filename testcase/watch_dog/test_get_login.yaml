@@ -6,8 +6,10 @@
     json:
         username: zengjuan
         password: 123456
+    headers:
+      Authorization: $.headers[Authorization]
   extract:
-      Authorization: $.headers['Authorization']
+      code: $.code
   validate:
       - equals: { status_code: 200 }
 

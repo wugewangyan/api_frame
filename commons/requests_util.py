@@ -1,12 +1,12 @@
 import json
 import re
 
+
 import jsonpath
 import requests
 
 from commons.str_util import replace_extract_param
-from commons.yaml_util import read_config_yaml, write_extract_yaml,write_token_yaml
-
+from commons.yaml_util import read_config_yaml, write_extract_yaml,read_extract_yaml
 
 class RequestsUtil():
     # 通过session会话去关联，session默认的情况下会自动关联cookie
@@ -43,6 +43,7 @@ class RequestsUtil():
             # 2. 判断数据类型, 转化成字符串
             if isinstance(data,dict) or isinstance(data,list):
                 str_data = json.dumps(data)
+                # if str_data = date1.dic_str
             else:
                 str_data = str(data)
 
@@ -55,8 +56,6 @@ class RequestsUtil():
             else:
                 data = data_type(str_data)
         return data
-
-
 
     def extract_response(self, case_info, response):
         if 'extract' in case_info.keys():
@@ -75,9 +74,6 @@ class RequestsUtil():
                             write_extract_yaml(extract_value)
                     except Exception as e:
                         print('返回的结果不是json格式，不能使用json_path提取')
-
-
-    # def extract_headers(self,caseinfo,headers):
 
 
     # 处理请求
@@ -102,23 +98,14 @@ class RequestsUtil():
                     value[file_key] = open(file_path,'rb')
 
         # 3. 发送请求
-        res = RequestsUtil.session.request(method, url, **case_info['request'])
-        # global auth
-        auth = res.headers['Authorization']
-        return auth
-        # print(auth)
-        write_token_yaml(auth)
-        print(res.text)
-
-
-
-
+        res = RequestsUtil.session.request(method, url,**case_info['request'],headers="Authorization")
+        return res
+        # print(res.text)
 
 
         # 4. 处理响应
         rr=self.extract_response(case_info, res)
         print(rr)
-
 
 
         #包含断言

@@ -10,14 +10,17 @@ def read_extract_yaml(key):
        extract_values = yaml.load(stream=f,Loader=yaml.FullLoader)
        return extract_values[key]
 
-def write_token_yaml(auth):
-    with open(get_object_path()+'./token.yaml',encoding='utf-8',mode='a') as f:
-        yaml.dump(auth=auth,steam=f,allow_unicode=True)
+# def write_yaml(auth):
+#     auth = {"auth":auth}
+#     with open('./token.yaml',encoding='utf-8',mode='a') as f:
+#         yaml.dump(data = auth,stream=f,allow_unicode=True)
+#
+# def read_yaml():
+#     with open('./token.yaml',encoding='utf-8',mode='r') as f:
+#         result = yaml.load(f.read(), Loader=yaml.FullLoader)
+#         auth = result['auth']
+#         return auth
 
-def get_token_yaml(auth):
-    with open(get_object_path() + './token.yaml', encoding='utf-8') as f:
-        extract_values = yaml.load(stream=f, Loader=yaml.FullLoader)
-        return extract_values[auth]
 
 
 
@@ -42,6 +45,6 @@ def read_testcase_yaml(yaml_path):
 
 
 
-if __name__ == '__main__':
-    read_config_yaml('base','base_url')
-    print(read_config_yaml('base','base_url'))
+# if __name__ == '__main__':
+#     read_config_yaml('base','base_url')
+#     print(read_config_yaml('base','base_url'))
